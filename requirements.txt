@@ -1,0 +1,4 @@
+duckdb~=1.5.1
+pandas~=3.0.1
+Faker~=40.12.0
+python-dotenv~=1.2.2

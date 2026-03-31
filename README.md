@@ -120,4 +120,3 @@ independiente y testeable — principio de responsabilidad única.
 Gustavo Adolfo Alvarado Medina
 Senior Data Engineer
 gadolfoalvarado@gmail.com
-+57 311 371 21 21 

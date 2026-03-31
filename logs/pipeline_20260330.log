@@ -199,3 +199,205 @@
 2026-03-30 20:23:54 | calidad.quality_checks | INFO |   Pass rate    : 100.0%
 2026-03-30 20:23:54 | calidad.quality_checks | INFO | ==================================================
 2026-03-30 20:23:54 | calidad.quality_checks | INFO | ✅ Reporte guardado: logs/quality_report_20260330_202354.csv
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | ==================================================
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | INICIANDO INGESTA — CAPA BRONZE
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | ==================================================
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | ⏭️  INCREMENTAL: Data de hoy ya existe en Bronze — omitiendo ingesta
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO |    Usa force=True para forzar reprocesamiento
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | ==================================================
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | INICIANDO INGESTA — CAPA BRONZE
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | ==================================================
+2026-03-30 21:22:02 | ingesta.generate_data | INFO | Generando 100 usuarios...
+2026-03-30 21:22:02 | ingesta.generate_data | INFO | ✅ 100 usuarios generados
+2026-03-30 21:22:02 | ingesta.generate_data | INFO | Generando 500 transacciones...
+2026-03-30 21:22:02 | ingesta.generate_data | INFO | ✅ 510 transacciones generadas (con duplicados intencionales)
+2026-03-30 21:22:02 | ingesta.generate_data | INFO | Generando detalles de transacciones...
+2026-03-30 21:22:02 | ingesta.generate_data | INFO | ✅ 612 detalles generados
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | 💾 Guardado: data/bronze/users/date=2026-03-30/users.parquet (100 registros)
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | 💾 Guardado: data/bronze/transactions/date=2026-03-30/transactions.parquet (510 registros)
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | 💾 Guardado: data/bronze/transaction_details/date=2026-03-30/transaction_details.parquet (612 registros)
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO | ✅ BRONZE COMPLETO en 0.06s
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO |    Users:        100 registros
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO |    Transactions: 510 registros
+2026-03-30 21:22:02 | ingesta.bronze_loader | INFO |    Details:      612 registros
+2026-03-30 21:22:02 | transformacion.silver | INFO | ==================================================
+2026-03-30 21:22:02 | transformacion.silver | INFO | INICIANDO TRANSFORMACION — CAPA SILVER
+2026-03-30 21:22:02 | transformacion.silver | INFO | ==================================================
+2026-03-30 21:22:02 | transformacion.silver | INFO | Bronze cargado: users (100 registros)
+2026-03-30 21:22:02 | transformacion.silver | INFO | Bronze cargado: transactions (510 registros)
+2026-03-30 21:22:02 | transformacion.silver | INFO | Bronze cargado: transaction_details (612 registros)
+2026-03-30 21:22:02 | transformacion.silver | INFO | Limpiando users...
+2026-03-30 21:22:02 | transformacion.silver | INFO | ✅ Users: 100 → 100 registros (+0 eliminados)
+2026-03-30 21:22:02 | transformacion.silver | INFO | Limpiando transactions...
+2026-03-30 21:22:02 | transformacion.silver | INFO |   Duplicados eliminados: 10
+2026-03-30 21:22:02 | transformacion.silver | INFO | ✅ Transactions: 510 → 500 registros limpios
+2026-03-30 21:22:02 | transformacion.silver | INFO | Limpiando transaction_details...
+2026-03-30 21:22:02 | transformacion.silver | INFO | ✅ Details: 612 → 612 registros limpios
+2026-03-30 21:22:02 | transformacion.silver | INFO | ✅ Silver guardado: data/silver/users/date=2026-03-30/users.parquet (100 registros)
+2026-03-30 21:22:02 | transformacion.silver | INFO | ✅ Silver guardado: data/silver/transactions/date=2026-03-30/transactions.parquet (500 registros)
+2026-03-30 21:22:02 | transformacion.silver | INFO | ✅ Silver guardado: data/silver/transaction_details/date=2026-03-30/transaction_details.parquet (612 registros)
+2026-03-30 21:22:02 | transformacion.silver | INFO | ✅ SILVER COMPLETO en 0.05s
+2026-03-30 21:22:02 | transformacion.silver | INFO |    Users:        100 registros limpios
+2026-03-30 21:22:02 | transformacion.silver | INFO |    Transactions: 500 registros limpios
+2026-03-30 21:22:02 | transformacion.silver | INFO |    Details:      612 registros limpios
+2026-03-30 21:22:02 | modelado.gold | INFO | ==================================================
+2026-03-30 21:22:02 | modelado.gold | INFO | INICIANDO MODELADO — CAPA GOLD
+2026-03-30 21:22:02 | modelado.gold | INFO | ==================================================
+2026-03-30 21:22:02 | modelado.gold | INFO | Silver cargado: users (100 registros)
+2026-03-30 21:22:02 | modelado.gold | INFO | Silver cargado: transactions (500 registros)
+2026-03-30 21:22:02 | modelado.gold | INFO | Silver cargado: transaction_details (612 registros)
+2026-03-30 21:22:02 | modelado.gold | INFO | Construyendo gold_user_metrics...
+2026-03-30 21:22:02 | modelado.gold | INFO | ✅ Gold guardado: data/gold/date=2026-03-30/gold_user_metrics.parquet (100 registros)
+2026-03-30 21:22:02 | modelado.gold | INFO | Construyendo gold_channel_metrics...
+2026-03-30 21:22:02 | modelado.gold | INFO | ✅ Gold guardado: data/gold/date=2026-03-30/gold_channel_metrics.parquet (3 registros)
+2026-03-30 21:22:02 | modelado.gold | INFO | Construyendo gold_payment_method_metrics...
+2026-03-30 21:22:02 | modelado.gold | INFO | ✅ Gold guardado: data/gold/date=2026-03-30/gold_payment_method_metrics.parquet (5 registros)
+2026-03-30 21:22:02 | modelado.gold | INFO | Construyendo gold_summary...
+2026-03-30 21:22:02 | modelado.gold | INFO | ✅ Gold guardado: data/gold/date=2026-03-30/gold_summary.parquet (1 registros)
+2026-03-30 21:22:02 | modelado.gold | INFO | ✅ GOLD COMPLETO en 0.03s
+2026-03-30 21:22:02 | modelado.gold | INFO |    gold_user_metrics: data/gold/date=2026-03-30/gold_user_metrics.parquet
+2026-03-30 21:22:02 | modelado.gold | INFO |    gold_channel_metrics: data/gold/date=2026-03-30/gold_channel_metrics.parquet
+2026-03-30 21:22:02 | modelado.gold | INFO |    gold_payment_method_metrics: data/gold/date=2026-03-30/gold_payment_method_metrics.parquet
+2026-03-30 21:22:02 | modelado.gold | INFO |    gold_summary: data/gold/date=2026-03-30/gold_summary.parquet
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | ==================================================
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | INICIANDO CALIDAD Y OBSERVABILIDAD — NIVEL 3
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | ==================================================
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | Ejecutando: conteo de registros...
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [users] record_count: 100 registros en Silver
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] record_count: 500 registros en Silver
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transaction_details] record_count: 612 registros en Silver
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | Ejecutando: trazabilidad Bronze → Silver...
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] bronze_to_silver_traceability: Bronze=510 → Silver=500 (se eliminaron 10 invalidos)
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transaction_details] bronze_to_silver_traceability: Bronze=612 → Silver=612
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | Ejecutando: null checks...
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [users] null_check_user_id: 0 nulls en columna user_id
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [users] null_check_name: 0 nulls en columna name
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [users] null_check_email: 0 nulls en columna email
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] null_check_transaction_id: 0 nulls en columna transaction_id
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] null_check_user_id: 0 nulls en columna user_id
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] null_check_amount: 0 nulls en columna amount
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] null_check_status: 0 nulls en columna status
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | Ejecutando: reglas de negocio...
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] amount_positive: 0 transacciones con amount <= 0
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] status_standardized: 0 registros con status invalido
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] no_duplicates: 0 duplicados encontrados
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | Ejecutando: integridad referencial...
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] referential_integrity_users: 0 transacciones sin usuario valido
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transaction_details] referential_integrity_transactions: 0 detalles sin transaccion valida
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | Ejecutando: freshness check...
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   ✅ [transactions] freshness: Transaccion mas reciente: 2026-03-30 11:53:36.874742
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | ==================================================
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | RESUMEN DE CALIDAD
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   Total checks : 18
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   Passed       : 18 ✅
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   Failed       : 0 ❌
+2026-03-30 21:22:02 | calidad.quality_checks | INFO |   Pass rate    : 100.0%
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | ==================================================
+2026-03-30 21:22:02 | calidad.quality_checks | INFO | ✅ Reporte guardado: logs/quality_report_20260330_212202.csv
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | Generando 10 usuarios...
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | ✅ 10 usuarios generados
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | Generando 10 usuarios...
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | ✅ 10 usuarios generados
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | Generando 20 transacciones...
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | ✅ 30 transacciones generadas (con duplicados intencionales)
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | Generando 10 usuarios...
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | ✅ 10 usuarios generados
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | Generando 50 transacciones...
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | ✅ 60 transacciones generadas (con duplicados intencionales)
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | Generando 10 usuarios...
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | ✅ 10 usuarios generados
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | Generando 50 transacciones...
+2026-03-30 21:35:38 | ingesta.generate_data | INFO | ✅ 60 transacciones generadas (con duplicados intencionales)
+2026-03-30 22:02:02 | ingesta.bronze_loader | INFO | ==================================================
+2026-03-30 22:02:02 | ingesta.bronze_loader | INFO | INICIANDO INGESTA — CAPA BRONZE
+2026-03-30 22:02:02 | ingesta.bronze_loader | INFO | ==================================================
+2026-03-30 22:02:02 | ingesta.bronze_loader | INFO | ⏭️  INCREMENTAL: Data de hoy ya existe en Bronze — omitiendo ingesta
+2026-03-30 22:02:02 | ingesta.bronze_loader | INFO |    Usa force=True para forzar reprocesamiento
+2026-03-30 22:02:02 | transformacion.silver | INFO | ==================================================
+2026-03-30 22:02:02 | transformacion.silver | INFO | INICIANDO TRANSFORMACION — CAPA SILVER
+2026-03-30 22:02:02 | transformacion.silver | INFO | ==================================================
+2026-03-30 22:02:02 | transformacion.silver | INFO | Bronze cargado: users (100 registros)
+2026-03-30 22:02:02 | transformacion.silver | INFO | Bronze cargado: transactions (510 registros)
+2026-03-30 22:02:02 | transformacion.silver | INFO | Bronze cargado: transaction_details (612 registros)
+2026-03-30 22:02:02 | transformacion.silver | INFO | Limpiando users...
+2026-03-30 22:02:02 | transformacion.silver | INFO | ✅ Users: 100 → 100 registros (+0 eliminados)
+2026-03-30 22:02:02 | transformacion.silver | INFO | Limpiando transactions...
+2026-03-30 22:02:02 | transformacion.silver | INFO |   Duplicados eliminados: 10
+2026-03-30 22:02:02 | transformacion.silver | INFO | ✅ Transactions: 510 → 500 registros limpios
+2026-03-30 22:02:02 | transformacion.silver | INFO | Limpiando transaction_details...
+2026-03-30 22:02:02 | transformacion.silver | INFO | ✅ Details: 612 → 612 registros limpios
+2026-03-30 22:02:02 | transformacion.silver | INFO | ✅ Silver guardado: data/silver/users/date=2026-03-30/users.parquet (100 registros)
+2026-03-30 22:02:02 | transformacion.silver | INFO | ✅ Silver guardado: data/silver/transactions/date=2026-03-30/transactions.parquet (500 registros)
+2026-03-30 22:02:02 | transformacion.silver | INFO | ✅ Silver guardado: data/silver/transaction_details/date=2026-03-30/transaction_details.parquet (612 registros)
+2026-03-30 22:02:02 | transformacion.silver | INFO | ✅ SILVER COMPLETO en 0.05s
+2026-03-30 22:02:02 | transformacion.silver | INFO |    Users:        100 registros limpios
+2026-03-30 22:02:02 | transformacion.silver | INFO |    Transactions: 500 registros limpios
+2026-03-30 22:02:02 | transformacion.silver | INFO |    Details:      612 registros limpios
+2026-03-30 22:02:02 | modelado.gold | INFO | ==================================================
+2026-03-30 22:02:02 | modelado.gold | INFO | INICIANDO MODELADO — CAPA GOLD
+2026-03-30 22:02:02 | modelado.gold | INFO | ==================================================
+2026-03-30 22:02:02 | modelado.gold | INFO | Silver cargado: users (100 registros)
+2026-03-30 22:02:02 | modelado.gold | INFO | Silver cargado: transactions (500 registros)
+2026-03-30 22:02:02 | modelado.gold | INFO | Silver cargado: transaction_details (612 registros)
+2026-03-30 22:02:02 | modelado.gold | INFO | Construyendo gold_user_metrics...
+2026-03-30 22:02:02 | modelado.gold | INFO | ✅ Gold guardado: data/gold/date=2026-03-30/gold_user_metrics.parquet (100 registros)
+2026-03-30 22:02:02 | modelado.gold | INFO | Construyendo gold_channel_metrics...
+2026-03-30 22:02:02 | modelado.gold | INFO | ✅ Gold guardado: data/gold/date=2026-03-30/gold_channel_metrics.parquet (3 registros)
+2026-03-30 22:02:02 | modelado.gold | INFO | Construyendo gold_payment_method_metrics...
+2026-03-30 22:02:02 | modelado.gold | INFO | ✅ Gold guardado: data/gold/date=2026-03-30/gold_payment_method_metrics.parquet (5 registros)
+2026-03-30 22:02:02 | modelado.gold | INFO | Construyendo gold_summary...
+2026-03-30 22:02:02 | modelado.gold | INFO | ✅ Gold guardado: data/gold/date=2026-03-30/gold_summary.parquet (1 registros)
+2026-03-30 22:02:02 | modelado.gold | INFO | ✅ GOLD COMPLETO en 0.03s
+2026-03-30 22:02:02 | modelado.gold | INFO |    gold_user_metrics: data/gold/date=2026-03-30/gold_user_metrics.parquet
+2026-03-30 22:02:02 | modelado.gold | INFO |    gold_channel_metrics: data/gold/date=2026-03-30/gold_channel_metrics.parquet
+2026-03-30 22:02:02 | modelado.gold | INFO |    gold_payment_method_metrics: data/gold/date=2026-03-30/gold_payment_method_metrics.parquet
+2026-03-30 22:02:02 | modelado.gold | INFO |    gold_summary: data/gold/date=2026-03-30/gold_summary.parquet
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | ==================================================
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | INICIANDO CALIDAD Y OBSERVABILIDAD — NIVEL 3
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | ==================================================
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | Ejecutando: conteo de registros...
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [users] record_count: 100 registros en Silver
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] record_count: 500 registros en Silver
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transaction_details] record_count: 612 registros en Silver
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | Ejecutando: trazabilidad Bronze → Silver...
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] bronze_to_silver_traceability: Bronze=510 → Silver=500 (se eliminaron 10 invalidos)
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transaction_details] bronze_to_silver_traceability: Bronze=612 → Silver=612
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | Ejecutando: null checks...
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [users] null_check_user_id: 0 nulls en columna user_id
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [users] null_check_name: 0 nulls en columna name
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [users] null_check_email: 0 nulls en columna email
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] null_check_transaction_id: 0 nulls en columna transaction_id
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] null_check_user_id: 0 nulls en columna user_id
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] null_check_amount: 0 nulls en columna amount
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] null_check_status: 0 nulls en columna status
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | Ejecutando: reglas de negocio...
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] amount_positive: 0 transacciones con amount <= 0
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] status_standardized: 0 registros con status invalido
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] no_duplicates: 0 duplicados encontrados
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | Ejecutando: integridad referencial...
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] referential_integrity_users: 0 transacciones sin usuario valido
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transaction_details] referential_integrity_transactions: 0 detalles sin transaccion valida
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | Ejecutando: freshness check...
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   ✅ [transactions] freshness: Transaccion mas reciente: 2026-03-30 11:53:36.874742
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | ==================================================
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | RESUMEN DE CALIDAD
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   Total checks : 18
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   Passed       : 18 ✅
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   Failed       : 0 ❌
+2026-03-30 22:02:02 | calidad.quality_checks | INFO |   Pass rate    : 100.0%
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | ==================================================
+2026-03-30 22:02:02 | calidad.quality_checks | INFO | ✅ Reporte guardado: logs/quality_report_20260330_220202.csv
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | Generando 10 usuarios...
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | ✅ 10 usuarios generados
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | Generando 10 usuarios...
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | ✅ 10 usuarios generados
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | Generando 20 transacciones...
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | ✅ 30 transacciones generadas (con duplicados intencionales)
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | Generando 10 usuarios...
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | ✅ 10 usuarios generados
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | Generando 50 transacciones...
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | ✅ 60 transacciones generadas (con duplicados intencionales)
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | Generando 10 usuarios...
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | ✅ 10 usuarios generados
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | Generando 50 transacciones...
+2026-03-30 22:03:57 | ingesta.generate_data | INFO | ✅ 60 transacciones generadas (con duplicados intencionales)
