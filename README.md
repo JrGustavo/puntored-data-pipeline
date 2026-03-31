@@ -50,7 +50,7 @@ puntored-data-pipeline/
 
 ## Instalación
 ```bash
-git clone https://github.com/TU_USUARIO/puntored-data-pipeline.git
+git clone https://github.com/JrGustavo/puntored-data-pipeline.git
 cd puntored-data-pipeline
 python -m venv .venv
 source .venv/bin/activate
