@@ -1,0 +1,19 @@
+entity,check,status,detail,checked_at
+users,record_count,PASS,100 registros en Silver,2026-03-30T20:23:54.708243
+transactions,record_count,PASS,499 registros en Silver,2026-03-30T20:23:54.708261
+transaction_details,record_count,PASS,616 registros en Silver,2026-03-30T20:23:54.708275
+transactions,bronze_to_silver_traceability,PASS,Bronze=510 → Silver=499 (se eliminaron 11 invalidos),2026-03-30T20:23:54.708298
+transaction_details,bronze_to_silver_traceability,PASS,Bronze=617 → Silver=616,2026-03-30T20:23:54.708310
+users,null_check_user_id,PASS,0 nulls en columna user_id,2026-03-30T20:23:54.708426
+users,null_check_name,PASS,0 nulls en columna name,2026-03-30T20:23:54.708476
+users,null_check_email,PASS,0 nulls en columna email,2026-03-30T20:23:54.708514
+transactions,null_check_transaction_id,PASS,0 nulls en columna transaction_id,2026-03-30T20:23:54.708573
+transactions,null_check_user_id,PASS,0 nulls en columna user_id,2026-03-30T20:23:54.708607
+transactions,null_check_amount,PASS,0 nulls en columna amount,2026-03-30T20:23:54.709072
+transactions,null_check_status,PASS,0 nulls en columna status,2026-03-30T20:23:54.709132
+transactions,amount_positive,PASS,0 transacciones con amount <= 0,2026-03-30T20:23:54.709200
+transactions,status_standardized,PASS,0 registros con status invalido,2026-03-30T20:23:54.709301
+transactions,no_duplicates,PASS,0 duplicados encontrados,2026-03-30T20:23:54.709399
+transactions,referential_integrity_users,PASS,0 transacciones sin usuario valido,2026-03-30T20:23:54.709673
+transaction_details,referential_integrity_transactions,PASS,0 detalles sin transaccion valida,2026-03-30T20:23:54.710646
+transactions,freshness,PASS,Transaccion mas reciente: 2026-03-30 19:48:38.221832,2026-03-30T20:23:54.711030
